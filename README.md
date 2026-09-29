@@ -1,7 +1,7 @@
 ## Hi, I'm Srujan 👋
 
 Data engineer with ~10 years of experience building large-scale data platforms on AWS and Azure — PySpark, Apache Iceberg lakehouses, and event-driven architectures.
-I contribute to open-source data tooling..
+I contribute to open-source data tooling.
 
 ## Open Source Contributions
 
@@ -17,7 +17,10 @@ I contribute to open-source data tooling..
 
 - **Fix execution hang when a skip is unblocked by an abandon**: `plan_events_iterator` now runs the skip/abandon phases to a fixed point instead of a single pass, so a skip unblocked by an abandonment can no longer stall execution forever ([issue #33661](https://github.com/dagster-io/dagster/issues/33661), [PR #34238](https://github.com/dagster-io/dagster/pull/34238) — under review).
 
+### [PyIceberg](https://github.com/apache/iceberg-python): Apache Iceberg's Python library
+
+- **Fix: stream record batches lazily in `to_arrow_batch_reader()`**: the batch reader materialized every file up front (~12.6x memory blowup); it now streams batches one at a time ([issue #2407](https://github.com/apache/iceberg-python/issues/2407), [PR #4028](https://github.com/apache/iceberg-python/pull/4028) — under review).
+
 ## Research
 
 - **Silent data loss in serverless Spark** — arXiv paper (2026).
-
